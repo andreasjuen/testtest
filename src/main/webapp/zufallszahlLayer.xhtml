@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<body>
+	<f:view contracts="#{view.locale.language}">
+		<ui:composition template="/template.xhtml">
+			<ui:define name="content">
+				<h1>Generator</h1>
+                                <h:panelGrid columns="3">
+                                    <h:form>
+                                        <h:outputLabel value="Von"></h:outputLabel>
+                                        <p:inputText id="a_von"
+                                            value=""
+                                            validatorMessage="Bitte geben Sie ein Zahl ein">
+                                            <f:convertNumber integerOnly="true" />
+                                            <f:validateRequired />
+                                            <f:validateLongRange maximum="999" minimum="1" />
+                                        </p:inputText>
+                                        <p:message for="a_von" />
+                                        <h:outputLabel value="Von"></h:outputLabel>
+                                        <p:inputText id="a_bis"
+                                            value=""
+                                            validatorMessage="Bitte geben Sie ein Zahl ein">
+                                            <f:convertNumber integerOnly="true" />
+                                            <f:validateRequired />
+                                            <f:validateLongRange maximum="999" minimum="1" />
+                                        </p:inputText>
+                                        <p:message for="a_bis" />
+                                        <h:outputLabel value="Von"></h:outputLabel>
+                                        <p:inputText id="a_anzahl"
+                                            value=""
+                                            validatorMessage="Bitte geben Sie ein Zahl ein">
+                                            <f:convertNumber integerOnly="true" />
+                                            <f:validateRequired />
+                                            <f:validateLongRange maximum="999" minimum="1" />
+                                        </p:inputText>
+                                        <p:message for="a_anzahl" />
+                                        <h:panelGroup>
+                                           <p:inputTextarea id="zufallszahl_ausgabe"
+                                                        rows="6" cols="30" readonly="true"
+                                                        value="" />
+                                        </h:panelGroup>   
+                                    </h:panelGrid>                                                             
+                                    <p:commandButton value="" ajax="false" onclick="" update="zufallszahl_ausgabe" />
+                                </h:form>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+</body>
+</html>
